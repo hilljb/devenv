@@ -7,7 +7,7 @@ Backing up my development environment, settings, and so on.
 
 * Plugging in the ThinkPad keyboard results in the command (alt) and option (windows)
 keys being reversed. Once plugged in, open keyboard preferences and in the keyboard tab
-click "Modifier Keys..." at the bottom. Map "Option" to "Control" and "Control" to
+click "Modifier Keys..." at the bottom. Map "Option" to "Command" and "Command" to
 "Option."
 
 ### iTerm2

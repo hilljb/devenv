@@ -12,6 +12,7 @@ click "Modifier Keys..." at the bottom. Map "Option" to "Command" and "Command" 
 
 ### iTerm2
 
+* Download iTerm2.
 * Load the profile `JSON's Profile.json`
 
 ### ZSH

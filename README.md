@@ -17,6 +17,8 @@ click "Modifier Keys..." at the bottom. Map "Option" to "Command" and "Command" 
 
 ### ZSH
 
+* ZSH is the shell in iTerm2. Use Oh My ZSH on top of that from here: https://ohmyz.sh/
+
 ### Brew
 
 * Visit `http://brew.sh` and follow the instructions.

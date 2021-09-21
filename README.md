@@ -49,7 +49,8 @@ end up giving your terminal access.
 ### Java
 
 Download the JDK from Oracle and install. You should be able to check the version
-by running `java -version.
+by running `java -version.` You should use at least version 8 (as of Sep 2021 anyway)
+and an LTS version. I'm currently running 17 and will report here if this is problematic.
 
 ### Clojure
 

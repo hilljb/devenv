@@ -48,9 +48,7 @@ end up giving your terminal access.
 
 ### Java
 
-Download the JDK from Oracle and install. You should be able to check the version
-by running `java -version.` You should use at least version 8 (as of Sep 2021 anyway)
-and an LTS version. I'm currently running 17 and will report here if this is problematic.
+Use the Corretto Java JDK from Amazon. It's easy to install. I'm currently using version 8. `java -version` checks the version number.
 
 ### Clojure
 
@@ -59,6 +57,10 @@ and an LTS version. I'm currently running 17 and will report here if this is pro
 ### Conda / Python
 
 * Visit `https://docs.conda.io/en/latest/miniconda.html#macosx-installers` and install
+
+### Docker
+
+Follow the instructions here: https://docs.docker.com/desktop/mac/install/
 
 ### AWS
 

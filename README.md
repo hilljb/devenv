@@ -1,5 +1,5 @@
 # devenv
-Backing up my development environment, settings, and so on.
+Backing up my development environment, settings, and so on. The order isn't really from top to bottom due to dependencies along the way.
 
 ## Mac
 
@@ -22,6 +22,7 @@ click "Modifier Keys..." at the bottom. Map "Option" to "Command" and "Command" 
 ### Brew
 
 * Visit `http://brew.sh` and follow the instructions.
+* You may have to add a `.zshrc` (after installing oh-my-zsh) and add `/opt/homebrew/bin` to the path.
 
 ### Vim
 

@@ -3,17 +3,18 @@ Backing up my development environment, settings, and so on. The order isn't real
 
 ## Mac
 
-### Misc
+### Keyboard
 
-* Plugging in the ThinkPad keyboard results in the command (alt) and option (windows)
-keys being reversed. Once plugged in, open keyboard preferences and in the keyboard tab
-click "Modifier Keys..." at the bottom. Map "Option" to "Command" and "Command" to
-"Option."
+* Use `Karabiner-Elements` to map the ThinkPad keyboard using "simple modifications":
+* Left Command -> Left Option
+* Left Option -> Left Command
+* Under System Settings -> Desktop and Dock -> Mission Control -> Shortcuts ... enter `Left Option`.
+* Under System Settings find `Function Keys` and use as function keys.
 
 ### iTerm2
 
 * Download iTerm2.
-* Load the profile `JSON's Profile.json`
+* Load the profile `JSON's Profile.json` and delete the default profile.
 
 ### ZSH
 
@@ -30,11 +31,6 @@ click "Modifier Keys..." at the bottom. Map "Option" to "Command" and "Command" 
 * Place the `.vim/` directory from this repo in your home.
 * Place the `.vimrc` from this repo in your home.
 
-### Atom
-
-* Visit `http://atom.io` and download/install. (Unzip and move to the applications folder.)
-* In the welcome screen, uncheck `Show Welcome Guide...`
-
 ### GitHub
 
 Works as of 2021-09-03. You need to authorize your terminal for GitHub.
@@ -49,7 +45,17 @@ end up giving your terminal access.
 
 ### Java
 
-Use the Corretto Java JDK from Amazon. It's easy to install. I'm currently using version 8. `java -version` checks the version number.
+Install sdkman for controlling Java environments. Run the following for Java 17 (there will be an init step):
+
+```shell
+sdk install java 17.0.2.8.1-amzn
+sdk env
+```
+
+### VSCode
+
+* Install VSCode
+* Install Calva for Clojure. This should automatically install most of everything needed for Java.
 
 ### Clojure
 
@@ -61,12 +67,14 @@ Use the Corretto Java JDK from Amazon. It's easy to install. I'm currently using
 
 ### Docker
 
-Follow the instructions here: https://docs.docker.com/desktop/mac/install/
+* Install Docker Desktop.
 
 ### AWS
 
 ### Emacs
 
 ### Tmux
+
+* `brew install reattach-to-user-namespace`
 
 

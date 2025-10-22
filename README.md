@@ -3,14 +3,6 @@ Backing up my development environment, settings, and so on. The order isn't real
 
 ## Mac
 
-### Keyboard
-
-* Use `Karabiner-Elements` to map the ThinkPad keyboard using "simple modifications":
-* Left Command -> Left Option
-* Left Option -> Left Command
-* Under System Settings -> Desktop and Dock -> Mission Control -> Shortcuts ... enter `Left Option`.
-* Under System Settings find `Function Keys` and use as function keys.
-
 ### iTerm2
 
 * Download iTerm2.

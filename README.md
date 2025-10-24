@@ -129,6 +129,7 @@ brew install reattach-to-user-namespace
 Install tmux:
 ```shell
 brew install tmux
+```
 
 Also, add to your .zshrc:
 ```shell

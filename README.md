@@ -1,5 +1,5 @@
 # devenv
-Backing up my development environment, settings, and so on. The order isn't really from top to bottom due to dependencies along the way.
+Backing up my development environment, settings, and so on. This may need updating, but this is close for now.
 
 ## Mac
 
@@ -32,41 +32,129 @@ Works as of 2021-09-03. You need to authorize your terminal for GitHub.
 * Now go to "Personal Access Tokens."
 
 Once you create a token, you can use that as your password when authenticating in
-the terminal. You may have a few extra hoops to jump through, but this should
-end up giving your terminal access.
+the terminal. You'll enter you username, email, and/or name in git before making a commit
+or pushing. You use the token as your password and then your terminal is ready.
 
 ### Java
 
-Install sdkman for controlling Java environments. Run the following for Java 17 (there will be an init step):
-
+Install sdkman for controlling Java environments. Run the following for Java the most recent Java 17 Amazon version:
 ```shell
-sdk install java 17.0.2.8.1-amzn
-sdk env
+curl -s "https://get.sdkman.io" | bash
+```
+
+Source you shell rc file or open a new terminal and run:
+```shell
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+```
+
+Verify the installation by checking the version:
+```shell
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+```
+
+See what the latest version of Amazon Java is. As of late 2025, I'm using Java 17.
+```shell
+sdk list java | grep amzn | grep 17
+```
+
+Install Java, replacing the X as appropriate:
+```shell
+sdk install java 17.0.17-amzn
+```
+
+This should set that Java version as the default, but sdkman may ask. Check the version:
+```shell
+java -version
 ```
 
 ### VSCode
 
-* Install VSCode
-* Install Calva for Clojure. This should automatically install most of everything needed for Java.
+* Install VSCode.
 
 ### Clojure
 
-* Visit `http://leiningen.org` and install, or use `brew install leiningen`
+```shell
+brew install leiningen
+```
+
+Create a new Clojure app for testing, maybe in `~/tmp`:
+```shell
+lein new app testing-clojure
+```
+
+You should be able to run the app using `core.clj` in the VSCode terminal using `lein run`.
+
+Now, open the VSCode extensions menu and search for Calva. Install it. Once installed, you should be
+able to open your VSCode pallete and start a Calva Leiningen REPL. Use Leiningen with the Uberjar profile
+and you can now use Option+Return to execute code.
 
 ### Conda / Python
 
-* Visit `https://docs.conda.io/en/latest/miniconda.html#macosx-installers` and install
+Python is installed, but may not be callable in the way you want. Add this to your .zshrc:
+```shell
+alias python="python3"
+```
+
+Place this somewhere appropriate and execute it:
+```shell
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+```
+
+```shell
+bash Miniconda3-latest-MacOSX-arm64.sh
+```
+
+Add conda forge as the default package manager channel to avoid license issues from the default
+conda package channels.
+```shell
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+conda config --remove channels defaults
+```
+
+It looks like miniforge may be an option in the future for replacing miniconda with a completely
+open source and license worry-free option.
 
 ### Docker
 
 * Install Docker Desktop.
 
-### AWS
-
-### Emacs
-
 ### Tmux
 
-* `brew install reattach-to-user-namespace`
+This is needed for tmux in iterm2:
+```shell
+brew install reattach-to-user-namespace
+```
 
+Install tmux:
+```shell
+brew install tmux
+
+Also, add to your .zshrc:
+```shell
+alias tmux='reattach-to-user-namespace tmux'
+```
+
+From this repo:
+```shell
+cp tmux-config-dump.txt ~/.tmux.conf
+```
+
+Add this to your .zshrc after tmux is working:
+```shell
+# Add this function to your ~/.zshrc file
+ta() {
+  if [ -z "$1" ]; then
+    # If no argument is given, attach to the most recent session
+    tmux attach
+  else
+    # Attach to the session matching the argument
+    # 'attach' is often aliased to 'a'
+    tmux attach -t "$1"
+  fi
+}
+
+# Optional: Add an alias to list sessions quickly
+alias tl='tmux ls'
+```
 

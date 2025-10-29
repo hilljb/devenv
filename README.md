@@ -135,14 +135,9 @@ Install tmux:
 brew install tmux
 ```
 
-Also, add to your .zshrc:
-```shell
-alias tmux='reattach-to-user-namespace tmux'
-```
-
 From this repo:
 ```shell
-cp tmux-config-dump.txt ~/.tmux.conf
+cp .tmux.conf ~/.tmux.conf
 ```
 
 The `.zshrc` from this repo already contains aliases and other tmux tools.

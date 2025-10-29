@@ -11,6 +11,7 @@ Backing up my development environment, settings, and so on. This may need updati
 ### ZSH
 
 * ZSH is the shell in iTerm2. Use Oh My ZSH on top of that from here: https://ohmyz.sh/
+* Copy the `.zshrc` from this repo into your home.
 
 ### Brew
 
@@ -115,6 +116,9 @@ conda config --remove channels defaults
 It looks like miniforge may be an option in the future for replacing miniconda with a completely
 open source and license worry-free option.
 
+In VSCode, you can open the command palette and select `Python: Select Interpreter` to use a specific
+conda environment.
+
 ### Docker
 
 * Install Docker Desktop.
@@ -141,21 +145,5 @@ From this repo:
 cp tmux-config-dump.txt ~/.tmux.conf
 ```
 
-Add this to your .zshrc after tmux is working:
-```shell
-# Add this function to your ~/.zshrc file
-ta() {
-  if [ -z "$1" ]; then
-    # If no argument is given, attach to the most recent session
-    tmux attach
-  else
-    # Attach to the session matching the argument
-    # 'attach' is often aliased to 'a'
-    tmux attach -t "$1"
-  fi
-}
-
-# Optional: Add an alias to list sessions quickly
-alias tl='tmux ls'
+The `.zshrc` from this repo already contains aliases and other tmux tools.
 ```
-

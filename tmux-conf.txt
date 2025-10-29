@@ -1,0 +1,98 @@
+###############################################################
+# CORE SETTINGS
+###############################################################
+
+# Set prefix to backtick (`) instead of the default Ctrl-b
+set-option -g prefix `
+bind-key ` send-prefix
+
+# Change base-index from 0 to 1 so window numbers start at 1
+# This is a window option, applied globally to all windows (-g)
+set-window-option -g base-index 1
+set-window-option -g pane-base-index 1
+
+# Automatically renumber windows when one is closed
+set-option -g renumber-windows on
+
+# Set the default shell
+set-option -g default-shell /bin/zsh
+
+# Set the history limit to 2000 lines
+set-option -g history-limit 2000
+
+# Set the repeat time for commands
+set-option -g repeat-time 500
+
+# Detach when a session is destroyed (e.g., when the last window is killed)
+set-option -g detach-on-destroy on
+
+# Disable mouse mode by default (as per your old setting)
+set-option -g mouse on
+
+###############################################################
+# VISUAL AND BEHAVIOR OPTIONS (MONITORING/BELLS)
+###############################################################
+
+# Automatically rename windows based on the running command
+set-option -g set-titles on
+set-option -g set-titles-string "#S:#I.#P #W"
+
+# Set window monitoring options
+set-window-option -g monitor-activity on
+set-window-option -g bell-action any
+set-option -g visual-bell off
+
+# Lock settings
+set-option -g lock-after-time 0
+set-option -g lock-command "lock -np"
+
+# Update environment variables (typically used for ssh/xserver)
+set-option -g update-environment[0] DISPLAY
+set-option -g update-environment[1] KRB5CCNAME
+set-option -g update-environment[2] SSH_ASKPASS
+set-option -g update-environment[3] SSH_AUTH_SOCK
+set-option -g update-environment[4] SSH_AGENT_PID
+set-option -g update-environment[5] SSH_CONNECTION
+set-option -g update-environment[6] WINDOWID
+set-option -g update-environment[7] XAUTHORITY
+
+# Other miscellaneous options
+set-option -g word-separators "!\"#$%&'()*+,-./:;<=>?@[\\]^`{|}~"
+set-option -g display-time 750
+
+# Old default-size is unnecessary and is removed to use full terminal size
+
+###############################################################
+# CUSTOM STATUS BAR CONFIGURATION
+# (Replaces old 'status-format' lines for clean display)
+###############################################################
+
+# Status Bar General
+set-option -g status on
+set-option -g status-interval 15
+set-option -g status-keys emacs
+set-option -g status-justify left
+set-option -g status-bg default
+set-option -g status-fg default
+set-option -g status-style fg=cyan
+set-option -g message-style bg=yellow,fg=black
+set-option -g message-command-style bg=black,fg=yellow
+
+# Status Left: Keep your original format (Session Name)
+set-option -g status-left "[#{session_name}] "
+set-option -g status-left-length 10
+set-option -g status-left-style default
+
+# Status Right: Keep your original format (Pane Title, Time/Date)
+set-option -g status-right "#{?window_bigger,[#{window_offset_x}#,#{window_offset_y}] ,}\"#{=21:pane_title}\" %H:%M %d-%b-%y"
+set-option -g status-right-length 40
+set-option -g status-right-style default
+
+# --- WINDOW LIST FORMAT (Center Part) ---
+
+# Inactive Windows: Show index (#I), window name (#W), and flags (#F)
+set-window-option -g window-status-format '#I:#W#F'
+
+# Active Windows: Apply highlighting (white foreground, blue background, bold)
+set-window-option -g window-status-current-format '#[fg=white,bg=blue,bold]#I:#W#F#[default]'
+

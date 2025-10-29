@@ -91,10 +91,8 @@ and you can now use Option+Return to execute code.
 
 ### Conda / Python
 
-Python is installed, but may not be callable in the way you want. Add this to your .zshrc:
-```shell
-alias python="python3"
-```
+Python is installed, but may not be callable in the way you want. The system Python can be called
+using `python3`. After we install Conda, `python` will be symlinked to conda.
 
 Place this somewhere appropriate and execute it:
 ```shell

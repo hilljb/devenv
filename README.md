@@ -148,3 +148,9 @@ which is a very large (~5GiB) download:
 brew install --cask mactex
 ```
 
+Once installed and in your PATH, VS Code (reloaded)  should be able to find the LaTeX binaries. Look for the extension
+setting in VS Code
+```
+latex-workshop.latex.autoBuild.run
+```
+and make sure it is set to `onFileChange`. Then, you will be able to open the PDF preview side-by-side view in VS Code.

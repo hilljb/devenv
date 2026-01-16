@@ -139,4 +139,19 @@ cp .tmux.conf ~/.tmux.conf
 ```
 
 The `.zshrc` from this repo already contains aliases and other tmux tools.
+
+### LaTeX
+
+In VS Code, there is a plugin named LaTeX Workshop. Once that is installed, get a LaTeX package. I am using MacTex,
+which is a very large (~5GiB) download:
+```shell
+brew install --cask mactex
 ```
+
+Once installed and in your PATH, VS Code (reloaded)  should be able to find the LaTeX binaries. Look for the extension
+setting in VS Code
+```
+latex-workshop.latex.autoBuild.run
+```
+and make sure it is set to `onFileChange`. Then, you will be able to open the PDF preview side-by-side view in VS Code,
+by looking for "latex pdf" in the VS Code command palette.

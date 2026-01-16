@@ -153,4 +153,5 @@ setting in VS Code
 ```
 latex-workshop.latex.autoBuild.run
 ```
-and make sure it is set to `onFileChange`. Then, you will be able to open the PDF preview side-by-side view in VS Code.
+and make sure it is set to `onFileChange`. Then, you will be able to open the PDF preview side-by-side view in VS Code,
+by looking for "latex pdf" in the VS Code command palette.

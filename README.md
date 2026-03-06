@@ -71,6 +71,8 @@ java -version
 ### VSCode
 
 * Install VSCode.
+* Install the color theme: One Dark Pro
+* Install the file icon theme: Material Icon Theme
 
 ### Clojure
 
